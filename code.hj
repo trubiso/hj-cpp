@@ -1,0 +1,6 @@
+print("Hello, world!");
+
+function die(num how_much, string how) => bool {
+    if (how_much > 10) { return true; }
+    return false;
+}
