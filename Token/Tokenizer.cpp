@@ -20,7 +20,7 @@ std::vector<Token> Tokenizer::create_tokens() {
         std::cmatch cm;
 
         for (int i = 0 ; i < TOKEN_TYPE_QUANTITY ; i++) {
-            if(!std::regex_match(trim(slice).c_str(), cm, std::regex(TokenRegex[i]))) continue;
+            if(!std::regex_search(trim(slice).c_str(), cm, std::regex(TokenRegex[i]))) continue;
             token = Token((TokenType) i, std::string(cm[0]));
             tokens.push_back(token);
             foundToken = true;
@@ -28,7 +28,7 @@ std::vector<Token> Tokenizer::create_tokens() {
         }
 
         if (!foundToken) {
-            std::cout << "I hate myself." << std::endl;
+            std::cout << "I hate myself (but not seriously :) )." << std::endl;
             return tokens;
         }
         advance(token.value.length());

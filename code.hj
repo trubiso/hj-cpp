@@ -1,3 +1,4 @@
+(((())))
 print("Hello, world!");
 
 function die(num how_much, string how) => bool {
